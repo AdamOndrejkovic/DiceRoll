@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/background"
+    >
+
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_title"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textSize="25sp"
+        android:padding="5sp"
+        android:textColor="@color/white"
+        />
+
+    <Spinner
+        android:id="@+id/spAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/amount"
+        android:minHeight="32dp" />
+
+    <LinearLayout
+        android:id="@+id/lyDicesWraper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <LinearLayout
+            android:id="@+id/lyDices1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/ivDice1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/ivDice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyDices2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/ivDice3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/ivDice4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyDices3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/ivDice5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+
+            <ImageView
+                android:id="@+id/ivDice6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dice1"
+                android:layout_margin="30dp"
+                android:maxWidth="100dp"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btn_roll" />
+
+
+</RelativeLayout>

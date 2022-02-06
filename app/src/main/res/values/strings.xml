@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">DiceRoll</string>
+    <string name="app_title">Dicecup</string>
+    <string name="btn_roll">Roll</string>
+    <string name="history">History</string>
+    <string name="rules">Rules</string>
+    <string name="history_title">History</string>
+    <string-array name="amount">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>
