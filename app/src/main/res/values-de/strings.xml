@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Würfel</string>
+    <string name="app_title">Würfelbecher</string>
+    <string name="dice">Würfel</string>
+    <string name="settings">Einstellungen</string>
+    <string name="rules">Regeln</string>
+    <string name="btn_roll">Rollen</string>
+    <string name="history">Geschichte</string>
+    <string name="history_title">Geschichte</string>
+    <string name="changeLanguage">Sprache ändern</string>
+</resources>

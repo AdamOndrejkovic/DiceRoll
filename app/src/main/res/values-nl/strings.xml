@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dobbelsteen</string>
+    <string name="settings">Instellingen</string>
+    <string name="dice">Dobbelsteen</string>
+    <string name="app_title">Dobbelbeker</string>
+    <string name="btn_roll">Rollen</string>
+    <string name="history">Historie</string>
+    <string name="rules">Regels</string>
+    <string name="history_title">Historie</string>
+    <string name="changeLanguage">Taal wijzigen</string>
+</resources>

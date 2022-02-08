@@ -76,6 +76,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+
     private fun updateDicesWith(image: Int, index: Int) {
         dices[index].setImageResource(diceId[image])
     }
@@ -98,11 +100,16 @@ class MainActivity : AppCompatActivity() {
             R.id.iRules-> Intent(this, RulesActivity::class.java).also {
                 startActivity(it)
             }
+            R.id.iSettings-> Intent(this,SettingsActivity::class.java).also {
+                startActivity(it)
+            }
             else -> {
                 return super.onOptionsItemSelected(item)
             }
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 }

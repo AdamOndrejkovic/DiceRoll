@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Terninger</string>
+    <string name="app_title">Terning kop</string>
+    <string name="dice">Terninger</string>
+    <string name="settings">Indstillinger</string>
+    <string name="history_title">Historie</string>
+    <string name="history">Historie</string>
+    <string name="btn_roll">Rulle</string>
+    <string name="rules">Regler</string>
+    <string name="changeLanguage">Skift sprog</string>
+</resources>
