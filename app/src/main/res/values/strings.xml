@@ -1,10 +1,13 @@
 <resources>
-    <string name="app_name">DiceRoll</string>
-    <string name="app_title">Dicecup</string>
+    <string name="app_name">Dice</string>
+    <string name="app_title">Dice-Cup</string>
     <string name="btn_roll">Roll</string>
     <string name="history">History</string>
     <string name="rules">Rules</string>
     <string name="history_title">History</string>
+    <string name="dice">Dice</string>
+    <string name="settings">Settings</string>
+    <string name="changeLanguage">Change Language</string>
     <string-array name="amount">
         <item>1</item>
         <item>2</item>

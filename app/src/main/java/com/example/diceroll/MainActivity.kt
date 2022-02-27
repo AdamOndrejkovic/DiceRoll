@@ -2,6 +2,7 @@ package com.example.diceroll
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -55,9 +56,7 @@ class MainActivity : AppCompatActivity() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
         }
-
         btnRoll.setOnClickListener{ _ -> onClickRoll()}
-        Log.d(TAG, "OnCreate")
     }
 
     private fun onClickRoll(){
@@ -76,6 +75,8 @@ class MainActivity : AppCompatActivity() {
             history.add(sum)
         }
     }
+
+
 
     private fun updateDicesWith(image: Int, index: Int) {
         dices[index].setImageResource(diceId[image])
@@ -96,12 +97,19 @@ class MainActivity : AppCompatActivity() {
                     startActivity(it)
                 }
             }
-            R.id.iRules-> Toast.makeText(this, "Item 2 Selected", Toast.LENGTH_SHORT).show()
+            R.id.iRules-> Intent(this, RulesActivity::class.java).also {
+                startActivity(it)
+            }
+            R.id.iSettings-> Intent(this,SettingsActivity::class.java).also {
+                startActivity(it)
+            }
             else -> {
                 return super.onOptionsItemSelected(item)
             }
         }
         return super.onOptionsItemSelected(item)
     }
+
+
 
 }

@@ -15,4 +15,9 @@
         app:showAsAction="never"
         />
 
+    <item
+        android:id="@+id/iSettings"
+        android:title="@string/settings"
+        app:showAsAction="never"
+        />
 </menu>
