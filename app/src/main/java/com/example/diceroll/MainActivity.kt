@@ -2,19 +2,17 @@ package com.example.diceroll
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.diceroll.model.BEHistoryItem
-import kotlinx.android.synthetic.main.activity_history.*
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var dices = mutableListOf<ImageView>()
     private val HISTORY = "HISTORY"
     private val AMOUNT = "AMOUNT"
+    private val REQUEST_CODE_ANSWER = 12
 
     private val diceId = intArrayOf(
         0,
@@ -101,7 +100,15 @@ class MainActivity : AppCompatActivity() {
             updateDicesWith(image, i)
         }
 
-        val record = BEHistoryItem(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5])
+        val record = BEHistoryItem(
+            numbers[0],
+            numbers[1],
+            numbers[2],
+            numbers[3],
+            numbers[4],
+            numbers[5],
+            SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date())
+        )
         Toast.makeText(this, "Total count: " + (sum) , Toast.LENGTH_SHORT).show()
         if (history.size >= 10){
             history.removeAt(0)
@@ -127,7 +134,7 @@ class MainActivity : AppCompatActivity() {
             R.id.iHistory -> {
                 Intent(this, HistoryActivity::class.java).also {
                     it.putExtra("EXTRA_HISTORY", history.toTypedArray())
-                    startActivity(it)
+                    startActivityForResult(it, REQUEST_CODE_ANSWER)
                 }
             }
             R.id.iRules-> Toast.makeText(this, "Item 2 Selected", Toast.LENGTH_SHORT).show()
@@ -147,5 +154,13 @@ class MainActivity : AppCompatActivity() {
         super.onSaveInstanceState(outState)
         outState.putSerializable(HISTORY, history.toTypedArray())
         outState.putSerializable(AMOUNT, amount)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE_ANSWER) {
+            if (resultCode == RESULT_OK)
+                history.removeAll(history)
+        }
     }
 }

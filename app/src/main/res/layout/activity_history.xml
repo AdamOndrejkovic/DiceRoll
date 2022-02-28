@@ -6,14 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".HistoryActivity">
 
-    <TextView
-        android:id="@+id/tvHistory"
+    <Switch
+        android:id="@+id/swChangeView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/history_title"
+        android:text="Switch to images"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textSize="30sp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <ImageView
+        android:id="@+id/ivClear"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swChangeView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
@@ -23,7 +34,13 @@
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvHistory">
+        app:layout_constraintTop_toBottomOf="@+id/swChangeView">
+
+        <ListView
+            android:id="@+id/lvHistoryList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+        />
 
 
     </LinearLayout>
