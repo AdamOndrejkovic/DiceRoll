@@ -6,6 +6,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,19 @@ class HistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
-        supportActionBar!!.title = "History"
+        supportActionBar!!.title = getString(R.string.history_title)
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         val extras  = intent.getSerializableExtra("EXTRA_HISTORY") as Array<BEHistoryItem>
         val adapter = HistoryAdapter(this, extras)
         val imageAdapter = HistoryImageAdapter(this, extras)
         lvHistoryList.adapter = adapter
+
+        if (extras.isEmpty()){
+            val view = TextView(this)
+            view.text = getString(R.string.noRecords)
+            view.gravity = Gravity.CENTER
+            lyHistoryBox.addView(view)
+        }
 
         swChangeView.setOnClickListener{ _ ->
             run {
@@ -58,6 +66,9 @@ class HistoryActivity : AppCompatActivity() {
 
             }
             val resView: View = v1!!
+            if (position % 2 === 0){
+                resView.setBackgroundColor(Color.parseColor("#9E918F"))
+            }
             val row = history[position]
             val date = resView.findViewById<TextView>(R.id.tvItemDate)
             val item = resView.findViewById<TextView>(R.id.tvItemScore)
@@ -103,6 +114,9 @@ class HistoryActivity : AppCompatActivity() {
 
             }
             val resView: View = v1!!
+            if (position % 2 === 0){
+                resView.setBackgroundColor(Color.parseColor("#9E918F"))
+            }
             val row = history[position]
             val date = resView.findViewById<TextView>(R.id.tvItemDateImage)
             val item = resView.findViewById<TextView>(R.id.lyItemImages) as LinearLayout
@@ -123,6 +137,7 @@ class HistoryActivity : AppCompatActivity() {
         private fun generateImageArray(beHistoryItem: BEHistoryItem): MutableList<Int> {
             val images: MutableList<Int> = mutableListOf()
 
+
             if (beHistoryItem.firstDice.toInt() > 0){images.add(beHistoryItem.firstDice as Int)}
             if (beHistoryItem.secondDice.toInt() > 0){images.add(beHistoryItem.secondDice as Int)}
             if (beHistoryItem.thirdDice.toInt() > 0){images.add(beHistoryItem.thirdDice as Int)}
@@ -130,7 +145,7 @@ class HistoryActivity : AppCompatActivity() {
             if (beHistoryItem.fifthDice.toInt() > 0){images.add(beHistoryItem.fifthDice as Int)}
             if (beHistoryItem.sixthDice.toInt() > 0){images.add(beHistoryItem.sixthDice as Int)}
 
-            Log.d("xyz", "$images")
+            Log.d("xyz", "${images.get(0)}")
 
             return images;
         }

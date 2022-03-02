@@ -8,6 +8,7 @@
     <string name="dice">Dice</string>
     <string name="settings">Settings</string>
     <string name="changeLanguage">Change Language</string>
+    <string name="noRecords">No records were found</string>
     <string-array name="amount">
         <item>1</item>
         <item>2</item>
